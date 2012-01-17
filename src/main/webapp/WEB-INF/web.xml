@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+	<!-- Servlets -->
+
+	<servlet>
+		<servlet-name>remoteService</servlet-name>
+		<servlet-class>com.github.taktos.gwt.web.S2RemoteServiceServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>remoteService</servlet-name>
+		<url-pattern>/remoteService</url-pattern>
+	</servlet-mapping>
+
+	<!-- Seasar2 -->
+	<servlet>
+		<servlet-name>s2servlet</servlet-name>
+		<servlet-class>org.seasar.framework.container.servlet.S2ContainerServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>s2servlet</servlet-name>
+		<url-pattern>/s2servlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>
